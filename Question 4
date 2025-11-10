@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+void copyString(char* dest, char* src) {
+    while (*src) {
+        *dest = *src;
+        dest++;
+        src++;
+    }
+    *dest = '\0';  // Add null terminator
+}
+
+int main() {
+    char source[100], destination[100];
+    
+    cout << "Enter a string: ";
+    cin.getline(source, 100);
+    
+    char* srcPtr = source;
+    char* destPtr = destination;
+    
+    copyString(destPtr, srcPtr);
+    
+    cout << "Source string: " << source << endl;
+    cout << "Copied string: " << destination << endl;
+    
+    return 0;
+}
