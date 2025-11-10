@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int calculateLength(char* str) {
+    int length = 0;
+    char* ptr = str;
+    
+    while (*ptr) {
+        length++;
+        ptr++;
+    }
+    
+    return length;
+}
+
+int main() {
+    char str[100];
+    cout << "Enter a string: ";
+    cin.getline(str, 100);
+    
+    char* ptr = str;
+    int length = calculateLength(ptr);
+    
+    cout << "Length of the string: " << length << endl;
+    
+    return 0;
+}
